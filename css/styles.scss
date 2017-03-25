@@ -1,0 +1,717 @@
+@import 'mixins.scss';
+$main-bg-color:#0574AC;
+$light-blue:#79BFE2;
+$font-main:'Open Sans', sans-serif;
+@mixin background_stretch{
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+  margin:0;
+  padding:0;
+  position:relative;
+}
+
+
+nav .navbar-toggle {
+  margin: 13px 15px 13px 0;
+}
+
+.navbar-brand {
+  font-size: 30px;
+}
+
+
+
+nav.navbar.shrink {
+  min-height: 35px;
+
+}
+nav.shrink a {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  font-size: 15px;
+  -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            transition: all 0.2s;
+}
+
+
+
+nav.shrink .navbar-toggle {
+
+  margin: 8px 15px 8px 0;
+}
+header {
+  width: 100%;
+
+}
+.row {
+   margin:0;
+  padding:0;
+}
+.navbar-inverse {
+  border:none;
+  background:#04A7DE;
+
+  .navbar-collapse {
+    border:none;
+  }
+    .navbar-toggle {
+      background:url(../img/mob_menu.png) no-repeat center center;
+      border:none;
+      margin-top:11px !important;
+      &:link, &:visited, &:hover, &:active, &:focus {
+        background:url(../img/mob_menu.png) no-repeat center center;
+        }
+      .icon-bar {
+        background:transparent;
+          }
+      }
+  .navbar-brand {
+    color:#fff;
+    font-family: $font-main;
+    font-size: 1.7em !important;
+    font-weight: 300;
+    padding:10px 14px 35px 25px; 
+    
+  }
+  .navbar-header{
+    @include breakpoint(medium_screen1) {
+        padding:10px 0;
+      }
+  }
+  .navbar-nav {
+    float: right;
+    color: #fff;
+    margin:0 0 1px 0;
+    @include breakpoint(medium_screen1) {
+        width: 100%;
+       }
+      li {
+        text-align:center;
+        a {
+          font-family: $font-main;
+          color: #fff !important;
+          padding:30px 20px; 
+           @include breakpoint(medium_screen1) {
+           padding:20px 0;
+           background:rgb(53,198,246);
+          }
+
+          &:hover{
+            color:rgb(179,209,255)!important;
+            @include breakpoint(medium_screen1) {
+             background:rgb(53,198,246);
+            }
+          }
+        }
+      }
+    li.active {
+      background:rgb(53,198,246);
+      color:rgb(53,198,246);
+
+      a {
+        background:transparent;
+        &:hover, &:active, &:visited, &:focus  {
+        background:transparent;
+        }
+      }
+    } 
+  }
+}
+
+.navbar {
+  border-radius:0;
+}
+.navbar-collapse {
+  margin:0;
+  padding:0;
+}
+/*JUMBOTRON 
+============================================================
+============================================================ */
+.main-heading {
+ background: url(../img/main-bg2.jpg) no-repeat center center; 
+  @include background_stretch;
+ width: 100%;
+  display: table;
+  margin: 0;
+  max-width: none;
+  height:100vh;
+  padding: 0;
+  @include breakpoint(big_screen2) {
+    height:70vh;
+  }
+
+}
+.kids-wrap {
+  img {
+    margin-top:150px;
+    width: 100%;
+    max-width: 500px;
+    min-width: 350px;
+         @include breakpoint(medium_screen1) {
+          display: block;
+           margin:0 auto;
+           max-width: 300px;
+           min-width: 150px;
+          }
+  }
+}
+ @mixin before {
+   position:absolute;
+   left:0;
+   top:20px;
+ } 
+@mixin info-divs {
+  width: 100%;
+  overflow: hidden;
+  margin:30px 0 0 0;
+  padding:60px 0 40px 0;
+  @include breakpoint(big_screen2) {
+   padding:20px 0;
+  }
+}
+@mixin paragraph {
+  color: #fff;
+    font-family: $font-main;
+    display: inline-block;
+    padding:20px 0 0 20px;
+    position:relative;
+    font-size: 1.35em;
+    font-weight: 300;
+    @include breakpoint(big_screen2) {
+   font-size: 1.2em;
+  }
+}
+.bottom-bg {
+  background:url(../img/elipse-shape.png) no-repeat center bottom;
+  overflow: hidden;
+  width: 100%;
+  margin-top: -50px !important;
+  float: left;
+  position: relative;
+  padding-top:35px;
+   @include breakpoint(medium_screen1) {
+   background:url(../img/elipse-shape.png) no-repeat center top;
+   margin-top: -75px !important;
+  }
+}
+.support {
+  div {
+    @include info-divs;
+      @include breakpoint(medium_screen1) {
+        padding-bottom:0;
+       }
+  }
+  p {
+    @include paragraph;
+    &:nth-child(1) {
+      @include breakpoint(big_screen2) {
+       display: block;
+      }
+      @include breakpoint(medium_screen1) {
+       width: 140px;
+       margin:0 auto;
+      }
+      &:before {
+        content: url(../img/tel1.png);
+        @include before;
+      }
+    }
+    &:nth-child(2){
+         padding-left:35px;
+         margin-left: 10px;
+         @include breakpoint(big_screen2) {
+         display: block;
+         margin-left: 0;
+         padding:20px 0 0 35px;
+        }
+        &:before {
+          content: url(../img/clouds.png);
+          @include before;
+        }
+       @include breakpoint(medium_screen1) {
+      
+       width: 240px;
+       margin:0 auto;
+
+       }
+      }
+       @include breakpoint(medium_screen1) {
+        text-align:center;
+       }
+    }
+ }
+.mail {
+   @include breakpoint(medium_screen1) {
+      background:rgb(0,192,255);
+   }
+  div {
+    @include info-divs;
+    @include breakpoint(medium_screen1) {
+        margin:0;
+        padding:0 0 20px 0;
+       }
+  }
+   p {
+    @include paragraph;
+    float: right;
+    &:first-child {
+      padding-left:35px;
+      &:before {
+        content: url(../img/mail.png);
+        @include before;
+      }
+      @include breakpoint(big_screen2) {
+         display: block;
+        float: none;
+        }
+       @include breakpoint(medium_screen1) {
+       width: 235px;
+       margin:0 auto;
+      display: block;
+      float: none;
+       }
+    }
+  }
+     .social {
+      width: 130px;
+      height: 50px;
+      overflow: hidden;
+      display: inline-block;
+      padding:0;
+      margin:0 15px -10px 0;
+      text-align:right;
+      float: right;
+      @include breakpoint(big_screen2) {
+         display: block;
+         margin: 0;
+        text-align:left;
+        float: none;
+        }
+        @include breakpoint(medium_screen1) {
+          width: 86px;
+       margin:0 auto;
+       
+       }
+       a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+        background: url(../img/twitter.png) no-repeat center center;
+        background-size:cover;
+        &:nth-child(1) {
+          background: url(../img/facebook.png) no-repeat center center;
+        background-size:cover;
+        }
+       }
+    }
+}
+
+
+.main-headline {
+  text-align:right;
+  font-family: $font-main !important;
+  background: none;
+  margin-top: 250px;
+     @include breakpoint(medium_screen1) {
+           text-align: center;
+           margin-top: 130px;
+          }
+   h2 {
+    color: #fff;
+    font-weight:300;
+    font-size:2.5vw;
+    margin:0;
+    @include breakpoint(medium_screen1) {
+           font-size: 5.5vw;
+          }
+   }
+   h1 {
+    margin:0;
+    font-size: 4.5vw;
+    font-weight:bold;
+    color: #fff;
+      @include breakpoint(medium_screen1) {
+           font-size: 9.5vw;
+          }
+   }
+}
+  .toBottom {
+     font-family: $font-main;
+     display: block;
+     font-size: 1.6em;
+     text-decoration: none;
+     width: 220px;
+     height: 60px;
+     font-weight: 300;
+     padding:5px 20px;
+     background:transparent;
+     color: #fff;
+     border:1px solid #fff;
+    float: right;
+    line-height: 47px;
+    border-radius:10px;
+    text-align: center;
+     margin-top:20px;
+     position:relative;
+     z-index: 100;
+    &:hover {
+      background:#fff;
+      color: rgb(10,165,217);
+      text-decoration: none;
+    }
+
+    &:focus{
+      text-decoration: none;
+      background:transparent;
+    }
+    &:active {
+      color: #fff;
+    }
+    @include breakpoint(medium_screen1) {
+      float:none;
+      margin:40px auto 0 auto;
+    }
+  }
+/*SERVICES
+============================================================
+============================================================ */
+
+.services{
+  text-align:center;
+  background:#fff;
+  margin-bottom: 30px;
+}
+.heading1 {
+  font-family: $font-main;
+  color: $light-blue;
+  padding:30px 0;
+  text-align:center;
+}
+.service-type {
+  padding:0;
+
+  h2 {
+    color: rgb(0,192,255);
+    font-size: 1.5em;
+    font-family: $font-main;
+    width: 100%;
+  }
+  p {
+    padding: 5% 10%;
+    width: 100% !important;
+    font-family: $font-main;
+    color: rgb(0,192,255);
+    font-size: 1.4em;
+    font-weight: 300;
+    @include breakpoint(medium_screen1) {
+      padding: 5% 17%;
+      font-size: 1.1em;
+    }
+  }
+}
+/*EMERGENCY
+===========================================================================
+============================================================================*/
+.emergency {
+  width: 100%;
+  overflow: hidden;
+  background:rgb(103,226,205);
+  font-family: $font-main;
+  padding:30px;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 300;
+  div {
+    &:nth-child(1) {
+       p {
+        text-align: right;
+        margin:0;
+        @include breakpoint(medium_screen1) {
+          text-align: center;
+        }
+        &:before {
+          content: url(../img/tel1.png);
+          @include before;
+          right: 170px;
+          top: 3px;
+        }
+      }
+    }
+    &:nth-child(2) {
+      p {
+        margin:0;
+        @include breakpoint(medium_screen1) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+
+/*STAFF
+===========================================================================
+============================================================================*/
+.our-staff {
+  overflow: hidden;
+  padding:0 0 60px 0;
+}
+.staff-wrap {
+    padding: 0;
+    font-family: $font-main;
+    div {
+      clear: both;
+      margin-bottom: 50px;
+      img {
+        float: left;
+        width:130px;
+        height:130px;
+         @include breakpoint(medium_screen1) {
+          float: none;
+          display: block;
+          clear: both;
+          margin:0 auto;
+        }
+      }
+      h3 {
+        display: inline-block;
+        padding:10px;
+        margin-top: 10px;
+        padding-top:0;
+        font-family: $font-main;
+        @include breakpoint(medium_screen1) {
+          display: block;
+          text-align: center;
+        }
+      }
+      p {
+        padding:10px 10px 0 140px;
+        font-family: $font-main;
+        color: rgb(104,104,104);
+        @include breakpoint(medium_screen1) {
+          display: block;
+          text-align: center;
+          padding:10px 80px;
+        }
+        @include breakpoint(small_screen1) {
+          padding:10px;
+        }
+      }
+    }
+  }
+.about-wrap {
+    padding: 0;
+    font-family: $font-main;
+    img {
+      width: 100%;
+      max-width: 360px;
+    }
+    p {
+      padding-top:20px;
+      text-align: justify;
+    }
+  }
+.heading2{
+    @extend .heading1;
+    color:rgb(104,104,104);
+    padding-top: 45px;
+    margin-top: 0;
+    text-align: left;
+    @include breakpoint(medium_screen1) {
+      text-align: center;
+    }
+  }
+.page-header {
+    border:none;
+  }
+
+
+/*FOOTER ==================================================================
+=========================================================================== */
+.footer-wrap {
+  width: 100%;
+  padding-top: 70px;
+  overflow: hidden;
+  background:rgb(0,192,255);
+}
+.footer-f-info {
+  text-align: center;
+  font-family: $font-main;
+
+}
+@mixin info {
+  padding:70px 0 0 0;
+  position: relative;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 300;
+  @include breakpoint(medium_screen1) {
+    background-size:30px;
+    padding:35px;
+  }
+}
+.f-address {
+  @include info;
+  background:url(../img/address.png) no-repeat top center;
+  padding-bottom:10px !important;
+}
+.f-mob {
+  @include info;
+  background:url(../img/phone.png) no-repeat top center;
+}
+.f-mail {
+  @include info;
+  background:url(../img/f-mail.png) no-repeat top center;
+}
+
+
+.message-wrap {
+  padding:0 !important;
+  @include breakpoint(medium_screen1)  {
+    padding:0 10px !important;
+  }
+}
+
+.form-group-wrap {
+  margin-top:30px;
+  margin-bottom:20px;
+  margin-left: 0 !important;
+  @include breakpoint(medium_screen1){
+    margin-top:0;
+  }
+}
+
+.form-group {
+  color:#4D4D4F;
+  padding:0 !important;
+  width: 50%;
+  float: left !important;
+  @include breakpoint(biggest_screen2) {
+    width: 70%;
+  }
+  @include breakpoint(medium_screen1) {
+    width: 100%;
+  }
+  label {
+    font-family: $font-main;
+    color: #fff;
+    font-size: 1em;
+  }
+  input {
+    border-radius:0;
+    width: 100% !important;
+    border:#fff;
+  }
+  textarea {
+    border-radius:0;
+
+  }
+}
+.form-group-text {
+  color:#4D4D4F;
+  padding-left:0;
+  width: 100% !important;
+  display: block !important;
+  clear: both !important;
+ label {
+    font-family: $font-main;
+    color: #fff;
+    font-size: 1em;
+  }
+  input {
+    border-radius:0;
+    border:1px solid #fff;
+  }
+  textarea {
+    border-radius:0;
+   border:1px solid #fff;
+    color: #fff;
+  }
+}
+#email {
+   border:1px solid #fff;
+  @include breakpoint(medium_screen1){
+      padding-right:0;
+    }
+}
+.h4 {
+  margin-top: 0;
+}
+#name {
+   border:1px solid #fff;
+  @include breakpoint(medium_screen1){
+      padding-right:0;
+    }
+}
+.name {
+  width: 49%;
+  margin-right: 1%;
+  @include breakpoint(medium_screen1){
+      width: 100%;
+      margin-right: 0;
+    }
+}
+.form-control {
+  padding:10px 12px !important; 
+  width: 100% !important;
+  height: 45px;
+  background:transparent;
+  border:1px solid #fff;
+  color: #fff;
+  &:hover, &:focus {
+    background:transparent !important;
+    border:1px solid #fff;
+  }
+}
+.btn{
+    border-radius:0;
+    width: 150px;
+    height: 50px;
+    border:1px solid #fff;
+    background:transparent !important;
+    margin-left:auto !important;
+    margin-top: 5px !important;
+    margin-right: auto !important;
+    font-family: $font-main;
+    font-size: 1.3em;
+     color: #fff;
+      &:hover, &:focus {
+        background:#fff !important;
+        color: rgb(0,192,255);
+        border:1px solid #fff;
+       }
+        @include breakpoint(medium_screen1){
+      float: none !important;
+      margin: 15px auto !important;
+      width:100% !important;
+      }
+     &:after {
+          content:" ";
+      }
+    }
+
+.map-wrap {
+  padding: 0;
+  margin-top: 30px;
+  clear: both;
+  width: 100%;
+}
+#map {
+        width: 100%;
+        height: 400px;
+      }
+
+.copyright {
+  display: block;
+  text-align: center;
+  color: #fff;
+  padding:20px 0;
+  clear: both;
+}
